@@ -1,17 +1,19 @@
 package dto;
 
-public class Viagem {
-    private String destino;
+import enums.Destinos;
 
-    public Viagem(String lugarDeDestino) {
+public class Viagem {
+    private Destinos destino;
+
+    public Viagem(Destinos lugarDeDestino) {
         this.destino = lugarDeDestino;
     }
 
-    public String getDestino() {
+    public Destinos getDestino() {
         return this.destino;
     }
 
-    public void setDestino(String lugarDeDestino) {
+    public void setDestino(Destinos lugarDeDestino) {
         this.destino = lugarDeDestino;
     }
 }
