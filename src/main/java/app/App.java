@@ -6,7 +6,9 @@ public class App {
     public static void main(String[] args) {
         Viagem viagem = new Viagem("Fortaleza");
 
-        System.out.println(viagem.destino);
+        viagem.setDestino("São Paulo");
+
+        System.out.println(viagem.getDestino());
 
     }
 }
