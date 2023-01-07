@@ -32,5 +32,15 @@ public class App {
         System.out.println(viagem.getAcompanhantes().get(0).getNome());
         System.out.println(viagem.getAcompanhantes().get(1).getNome());
 
+//        for (int i =0; i< viagem.getAcompanhantes().size(); i++){
+//            System.out.println(viagem.getAcompanhantes().get(i).getNome());
+//            System.out.println(viagem.getAcompanhantes().get(i).isConfirmouCadastro());
+//        }
+
+        for (Acompanhante acompanhante : viagem.getAcompanhantes()) {
+            System.out.println(acompanhante.getNome());
+            System.out.println(acompanhante.isConfirmouCadastro());
+        }
+
     }
 }
