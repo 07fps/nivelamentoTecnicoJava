@@ -1,8 +1,11 @@
 package dto;
 
 import enums.Destinos;
+import utils.ArquivosUtils;
 
+import java.io.FileInputStream;
 import java.util.List;
+import java.util.Properties;
 
 public class ViagemNacional extends Viagem{
 
@@ -22,11 +25,13 @@ public class ViagemNacional extends Viagem{
 
     @Override
     public void setAcompanhantes(List<Acompanhante> acompanhantes) throws Exception{
-        if (acompanhantes.size() <= 1){
+
+        int limitedeAcompanhantes = Integer.parseInt(ArquivosUtils.getPropriedade("viagem.nacional.acompanhantes.limite"));
+
+        if (acompanhantes.size() <= limitedeAcompanhantes){
             super.setAcompanhantes(acompanhantes);
         } else {
-            throw new Exception("Viagens Internacionais não podem ter mais que 1 acompanhante");
+            throw new Exception("Viagens Internacionais não podem ter mais que "+ limitedeAcompanhantes + " acompanhante");
         }
-
     }
 }

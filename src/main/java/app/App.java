@@ -70,7 +70,6 @@ public class App {
             System.out.println(excecao.getMessage());
         }
 
-
         viagemInternacional1.setPassaporte("9999999-5");
 
         System.out.println(viagemNacional1.getDestino().getCidade());
