@@ -1,13 +1,14 @@
 package dto;
 
 import enums.Destinos;
+import interfaces.CalculadoradePrevisao;
 import utils.ArquivosUtils;
 
 import java.io.FileInputStream;
 import java.util.List;
 import java.util.Properties;
 
-public class ViagemInternacional extends Viagem{
+public class ViagemInternacional extends Viagem implements CalculadoradePrevisao {
 
     private String passaporte;
 
@@ -33,5 +34,13 @@ public class ViagemInternacional extends Viagem{
         } else {
             throw new Exception("Viagens Nacionais não permitem mais que " + limiteDeAcompanhantes + " acompanhantes");
         }
+    }
+
+    public int calcularPrevisaoDeDiasParaRetorno() {
+        if (this.getDestino().equals(Destinos.MIAMI)) {
+            return 1;
+        }
+
+        return 0;
     }
 }

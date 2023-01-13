@@ -61,7 +61,7 @@ public class App {
 
         viagemNacional1.setCpf("123123");
 
-        ViagemInternacional viagemInternacional1 = new ViagemInternacional(Destinos.MIAMI);
+        ViagemInternacional viagemInternacional1 = new ViagemInternacional(Destinos.ACAPULCO);
 
         try {
             viagemInternacional1.setAcompanhantes(acompanhantes);
@@ -77,6 +77,9 @@ public class App {
 
         System.out.println(viagemNacional1.getCpf());
         System.out.println(viagemInternacional1.getPassaporte());
+
+        System.out.println(viagemInternacional1.calcularPrevisaoDeDiasParaRetorno());
+        System.out.println(viagemNacional1.calcularPrevisaoDeDiasParaRetorno());
 
     }
 }
